@@ -28,7 +28,6 @@ function App() {
     };
     getData();
   }, []);
-  console.log(data);
 
   return (
     <>
@@ -39,10 +38,13 @@ function App() {
           <div className="header center text-3xl uppercase bolder mt-10 flex justify-center text-gray-500 mb-3">
             Random-API Fetcher
           </div>
-          <p className=" header text-xl text-bolder text-gray-500 flex justify-center">This site loads 15 random posts from JSON-Placeholder API everytime the website reloads.</p>
+          <p className=" header text-xl text-bolder text-gray-500 flex justify-center">
+            This site loads 15 random posts from JSON-Placeholder API everytime
+            the website reloads.
+          </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
             {data.length != 0 &&
-              data.map(({ id, url, title ,thumbnailUrl }) => {
+              data.map(({ id, url, title},ind) => {
                 return (
                   <div class="group cursor-pointer relative border border-gray-800 rounded-lg mt-3 ">
                     <img
